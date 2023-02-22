@@ -44,7 +44,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Singing App</h1>
+      <h1>Singing App in Redux Toolkit</h1>
       <select onChange={handleChange}>
         <option value="">Select a song</option>
         {lyrics.map((lyric) => (
