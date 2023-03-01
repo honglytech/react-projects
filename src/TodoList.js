@@ -43,7 +43,6 @@ const TodoList = () => {
             <div style={{ display: "flex", alignItems: "center" }}>
               <input
                 type="checkbox"
-                style={{ marginRight: "10px" }}
                 checked={todo.checked}
                 onChange={() => handleToggleTodo(index)}
               />
