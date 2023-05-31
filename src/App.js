@@ -1,17 +1,23 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MovieSearch from "./MovieSearch";
-import MovieDetails from "./MovieDetails";
+import React, { useState } from "react";
+import EmojiPicker, { Emoji } from "emoji-picker-react";
 
-function App() {
+const App = () => {
+  const [selectedEmoji, setSelectedEmoji] = useState("");
+
+  function onClick(emojiData) {
+    setSelectedEmoji(emojiData.unified);
+  }
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<MovieSearch />} />
-        <Route path="/movies/:id" element={<MovieDetails />} />
-      </Routes>
-    </Router>
+    <div>
+      <h2>Emoji Picker React Demo</h2>
+      <div>
+        {selectedEmoji ? <Emoji unified={selectedEmoji} size={62} /> : null}
+      </div>
+
+      <EmojiPicker onEmojiClick={onClick} />
+    </div>
   );
-}
+};
 
 export default App;
